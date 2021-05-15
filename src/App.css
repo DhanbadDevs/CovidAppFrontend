@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-custom {
+  background-color: #9DE0F5;
+}
+
+.itemCard:nth-child(even){
+  background-color: red;
+}
+.itemCard:nth-child(odd){
+  background-color: gray;
+}
