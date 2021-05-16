@@ -8,16 +8,17 @@ const MedEquipCard =(props)=>{
         
         <div className="col-4 p-0" style={{display:'flex',flexDirection:'column',justifyContent: 'flex-end',alignItems: 'stretch'}}>
             <img src={Bed} style={{width:'50px',alignSelf:'center',marginBottom:'10px'}}/>
-            <div style={{backgroundColor:"#55C3DB" ,margin:'5px',padding:'3px 10px',borderRadius:'20px',fontSize:'14px'}}>Cost:{props.item.charges}</div>
+            <div style={{backgroundColor:"#55C3DB" ,margin:'5px',padding:'3px 10px',borderRadius:'20px',fontSize:'14px'}}>Cost:{props.item.price}</div>
             <div style={{backgroundColor:"#FE9574" ,margin:'5px',padding:'3px 10px',borderRadius:'20px',fontSize:'14px'}}>{props.item.phone}</div>
         </div>
         <div className="col-8 m-0 mb-1" style={{backgroundColor:'#BFE9FB',marginBottom:'20px',width:'100%',borderRadius:'10px'}}>
-            <p style={{textAlign:'left',fontSize:'14px'}}>Bed Type:{props.item.bedType}<br/>
-            Stock:{props.item.bedCount}<br/>
+            <p style={{textAlign:'left',fontSize:'14px'}}>
+            Stock:{props.item.stock}<br/>
+            HomeDelivery:{props.item.isDeliverable.toString()}<br/>
+            Timing:{props.item.timing}<br/>
             Hospital:{props.item?.location?.locationName}<br/>
-            Private:{props.item?.location?.isPrivate}<br/>
             Address:{props.item?.location?.address}<br/>
-            
+            Note:{props.item.notes}
             </p>
         {props.item.isVerified && <i style={{color: '#09B22E',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>}
         </div>
