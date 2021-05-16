@@ -16,7 +16,8 @@ const BedCard =(props)=>{
             Bed Count:{props.item.bedCount}<br/>
             Hospital:{props.item?.location?.locationName}<br/>
             Private:{props.item?.location?.isPrivate?"true":"false"}<br/>
-            Address:{props.item?.location?.address}
+            Address:{props.item?.location?.address}<br/>
+            Notes:{props.item.notes}
             </p>
         {props.item.isVerified && <i style={{color: '#09B22E',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>}
         </div>
