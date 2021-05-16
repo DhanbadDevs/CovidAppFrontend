@@ -73,3 +73,23 @@
   font-size: 11px;
   left: 40%;
 }
+
+.avl-bed-count{
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 4px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+}
+
+.tot-bed-count{
+  border-radius: 10px;
+  line-height: 1;
+  padding: 6px 4px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+}
