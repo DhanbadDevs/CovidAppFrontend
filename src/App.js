@@ -30,8 +30,9 @@ import AmbulanceListPage from './Pages/Ambulance/AmbulanceListPage'
 import OthersListPage from './Pages/Others/OthersListPage'
 
 
-import Navbar from 'react-bootstrap/Navbar'
+// import Navbar from 'react-bootstrap/Navbar'
 import OxygenListPage from './Pages/Oxygen/OxygenListPage';
+import HelplinePage from './Pages/Helpline/HelplinePage';
 
 function App() {
 
@@ -78,6 +79,9 @@ function App() {
     <Route path='/oxygenlist'>
       <OxygenListPage />
     </Route>
+    <Route path='/helplinelist'>
+      <HelplinePage />
+    </Route>
     
       <Route path='/'>
         <HomePage />
@@ -91,7 +95,7 @@ return (
   // <AppContextProvider>
     <Router>
       {/* <Header /> */}
-      <Navbar bg="custom" variant="blue">
+      {/* <Navbar bg="custom" variant="blue">
                 <Navbar.Brand href="#home">
                     <img
                         alt=""
@@ -102,7 +106,7 @@ return (
                     />{' '}
                     <h1 style={{ color: "#0A1048", }} className='d-inline-block' >CovidApp</h1>
                 </Navbar.Brand>
-            </Navbar>
+            </Navbar> */}
       <Switch> {routes} </Switch>
         {/* <Footer /> */}
       {/* <BottomNavigator/> */}

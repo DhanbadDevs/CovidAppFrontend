@@ -27,9 +27,20 @@ const OxygenCard =(props)=>{
                 {props.item.isVerified && <i style={{color: '#09B22E',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>}
             </div>
         <p className="footer">Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY')}</p>
+
         </div>
         </div>
     )
+
+
+
+
+
+
+
+
+
+
 }
 
 export default OxygenCard
