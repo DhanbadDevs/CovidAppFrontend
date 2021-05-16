@@ -30,6 +30,8 @@ import AmbulanceListPage from './Pages/Ambulance/AmbulanceListPage'
 import OthersListPage from './Pages/Others/OthersListPage'
 
 
+import Navbar from 'react-bootstrap/Navbar'
+import OxygenListPage from './Pages/Oxygen/OxygenListPage';
 
 function App() {
 
@@ -73,7 +75,9 @@ function App() {
     <Route path='/otherlist'>
       <OthersListPage />
     </Route>
-    
+    <Route path='/oxygenlist'>
+      <OxygenListPage />
+    </Route>
     
       <Route path='/'>
         <HomePage />
@@ -87,6 +91,18 @@ return (
   // <AppContextProvider>
     <Router>
       {/* <Header /> */}
+      <Navbar bg="custom" variant="blue">
+                <Navbar.Brand href="#home">
+                    <img
+                        alt=""
+                        src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2020/03/hilf-jetzt-logo-ohne-text.png"
+                        width="40"
+                        height="40"
+                        className="d-inline-block align-top mt-1"
+                    />{' '}
+                    <h1 style={{ color: "#0A1048", }} className='d-inline-block' >CovidApp</h1>
+                </Navbar.Brand>
+            </Navbar>
       <Switch> {routes} </Switch>
         {/* <Footer /> */}
       {/* <BottomNavigator/> */}

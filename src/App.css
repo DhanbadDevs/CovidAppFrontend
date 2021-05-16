@@ -41,9 +41,35 @@
   background-color: #9DE0F5;
 }
 
-.itemCard:nth-child(even){
-  background-color: red;
+.rounded-corner{
+  border-radius: 20px;
 }
-.itemCard:nth-child(odd){
-  background-color: gray;
+
+.item-card{
+  height: 140px;
+  width: 140px;
+  border: 3px solid #7CC1F4;
+}
+
+.bg-card{
+  background-color: #E4F7FF;
+}
+
+.m-p-custom{
+  margin: 5px 0;
+  padding: 3px 7px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.hidden{
+  display: none;
+}
+
+.footer{
+  position:absolute;
+  bottom: 0;
+  margin: 0;
+  font-size: 11px;
+  left: 40%;
 }

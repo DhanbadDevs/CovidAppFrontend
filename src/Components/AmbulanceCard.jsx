@@ -24,7 +24,7 @@ const AmbulanceCard =(props)=>{
             </p>
         {props.item.isVerified && <i style={{color: '#09B22E',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>}
         </div>
-        <i style={{position:'absolute',bottom:5,right:10}} class="fal fa-thumbs-up"><span className='pl-1'>20{props.item.votes}</span></i>
+        <i style={{position:'absolute',bottom:5,right:40}} class="fal fa-thumbs-up"></i><span className='pl-1'>{props.item.votes}</span><i style={{position:'absolute',bottom:5,right:10}} class="fal fa-thumbs-down"></i>
         <p style={{position:'absolute',bottom:0,left:'40%',margin:0,fontSize:'10px'}}>Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY') }</p>
         </div>
         </div>

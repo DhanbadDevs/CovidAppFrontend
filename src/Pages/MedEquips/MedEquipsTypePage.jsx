@@ -14,7 +14,7 @@ const MedEquipsTypePage=()=>{
        <div className="container">
             <div className='row py-3'>
             {medequips?.map(medequip=>(
-                <div className='col-6 col-md-4' style={{display: 'flex',flexDirection: 'column',justifyContent: 'center',alignItems: 'center',width:'95%'}}>
+                <div className='col-6 col-md-4 d-flex flex-column justify-content-center align-items-center' >
                 <NavLink style={{fontSize:'14px',fontWeight:'bold',color:'#0A1048',width:'95%',backgroundColor:'#E8F9FF',height:'100px',display:'flex',justifyContent: 'center',alignItems: 'center'}} 
                 to={`/medlist?id=${medequip.id}`}>
                 {medequip.medicineEquipmentName}  
