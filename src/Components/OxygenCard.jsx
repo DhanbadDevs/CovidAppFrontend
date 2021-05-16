@@ -5,7 +5,7 @@ const OxygenCard =(props)=>{
 
     return(
         <div className="col-12 my-3">
-        <div className="row shadow w-100 m-auto rounded py-4 bg-card position-relative" >
+        <div className="row shadow w-100 m-auto rounded pt-4 pb-2 bg-card position-relative" >
             <div className="col-3.5 p-1 d-flex flex-column justify-content-center d-flex align-items-stretch">
             <img src={Oxygen} style={{ width: '50px', alignSelf: 'center', marginBottom: '10px' }} />  
                 <div className="m-p-custom" style={{backgroundColor:"#55C3DB"}}>Cost: {props.item?.price}</div>
