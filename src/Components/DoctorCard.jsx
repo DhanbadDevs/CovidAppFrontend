@@ -1,6 +1,15 @@
 import React from "react";
 import Doctor from "../Assets/doctor.png";
 import moment from "moment";
+
+const Num = (props) =>  {
+    return (
+        <>
+        { props.num } <br />
+        </>
+    )
+};
+
 const DoctorCard = (props) => {
     return (
         <div className="col-12 mb-3">
@@ -30,6 +39,7 @@ const DoctorCard = (props) => {
         style={{ width: "50px", alignSelf: "center", marginBottom: "10px" }}
         />
         <div
+        className="text-center"
         style={{
             backgroundColor: "#55C3DB",
                 margin: "5px",
@@ -49,7 +59,9 @@ const DoctorCard = (props) => {
                 fontSize: "14px",
         }}
         >
-        {props.item.phone}
+        <div className="text-center">
+        {props.item.phone.split(",").map(num => <Num num={num} />) }
+        </div>
         </div>
         </div>
         <div
@@ -61,8 +73,8 @@ const DoctorCard = (props) => {
                 borderRadius: "10px",
         }}
         >
-        <p style={{ textAlign: "left", fontSize: "14px" }}>
-        <span className="text-primary h3">{props?.item?.doctorName}</span>
+        <p style={{ textAlign: "center", fontSize: "14px" }}>
+        <span className="h4">{props?.item?.doctorName}</span>
         <br />
         <span className="text-muted"> {props?.item?.designation}</span>
         <br />
@@ -74,30 +86,24 @@ const DoctorCard = (props) => {
         <br />
         {props?.item?.notes}
         </p>
+        </div>
         {props.item.isVerified && (
             <i
             style={{
                 color: "#09B22E",
                     position: "absolute",
-                    top: 3,
+                    top : 3,
                     right: 10,
             }}
             className="fas fa-check-circle"
 
             > Verified</i>
         )}
-        </div>
-        <i
-        style={{ position: "absolute", bottom: 5, right: 10 }}
-        className="fal fa-thumbs-up"
-        >
-        <span className="pl-1">20{props.item.votes}</span>
-        </i>
         <p
         style={{
             position: "absolute",
                 bottom: 0,
-                left: "40%",
+                left: "50%",
                 margin: 0,
                 fontSize: "10px",
         }}
