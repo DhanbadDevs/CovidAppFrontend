@@ -1,28 +1,40 @@
 import React from 'react'
 import Bed from '../Assets/bed.png'
 import moment from 'moment'
+import BedAvlCard from '../Components/BedAvlCard'
 const BedCard = (props) => {
     return (
-        <div className="col-12 mb-3">
-            <div className="row shadow" style={{ position: 'relative', backgroundColor: "#E4F7FF", padding: '20px 0', width: '100%', margin: 'auto', borderRadius: '10px' }}>
-
-                <div className="col-4 p-0" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'stretch' }}>
-                    <img src={Bed} style={{ width: '50px', alignSelf: 'center', marginBottom: '10px' }} />
-                    <div style={{ backgroundColor: "#55C3DB", margin: '5px', padding: '3px 10px', borderRadius: '20px', fontSize: '14px' }}>Cost:{props.item.charges}</div>
-                    <div style={{ backgroundColor: "#FE9574", margin: '5px', padding: '3px 10px', borderRadius: '20px', fontSize: '14px' }}>{props.item.phone}</div>
-                </div>
-                <div className="col-8 m-0 mb-1" style={{ backgroundColor: '#BFE9FB', marginBottom: '20px', width: '100%', borderRadius: '10px' }}>
-                    <p style={{ textAlign: 'left', fontSize: '14px' }}>Bed Type:{props.item.bedType}<br />
-            Bed Count:{props.item.bedCount}<br />
-            Hospital:{props.item?.location?.locationName}<br />
-            Private:{props.item?.location?.isPrivate ? "true" : "false"}<br />
-            Address:{props.item?.location?.address}
-                    </p>
+             <div className="col-12 my-3">
+        <div className="row shadow w-100 m-auto rounded pt-4 pb-2 pr-2 bg-card position-relative" >
+            <div className="col-3.5 p-1 d-flex flex-column justify-content-center d-flex align-items-stretch">
+            <img src={Bed} style={{ width: '50px', alignSelf: 'center', marginBottom: '10px' }} />  
+                <div className="m-p-custom" style={{backgroundColor:"#55C3DB"}}><center>{props.item?.isPrivate?"Private":"Government"}</center></div>
+            {props.item?.phone===undefined?
+            (props.item?.location.phone.split(',').map(phone=>
+                <div className="m-p-custom" style={{backgroundColor:"#FE9574"}}><i class="fas fa-phone-alt" style={{fontSize:"12px", marginRight:"2px"}}></i>{phone}</div>
+                )):
+            (props.item?.phone.split(',').map(phone=>
+            <div className="m-p-custom" style={{backgroundColor:"#FE9574"}}><i class="fas fa-phone-alt" style={{fontSize:"12px", marginRight:"2px"}}></i>{phone}</div>
+            ))}
+            </div>
+                    <div className="col-8 mb-3 pb-1 w-100 rounded-corner d-flex flex-column align-items-center" style={{backgroundColor:'#BFE9FB'}}>
+                        <div className="text-left m-1 ">
+                        <h4 className="text-center my-0">{props.item?.location.locationName}</h4>
+                        <p className="text-center" style={{fontSize:"13px", marginBottom:"0px"}}>{props.item?.location.address}</p>
+                        </div>
+                    <div>
+                        <div className="row">
+                        <BedAvlCard type="Without Oxygen Beds" count={props.item?.withoutOxygen}></BedAvlCard>
+                        <BedAvlCard type="With Oxygen Beds " count={props.item?.withOxygen}></BedAvlCard>
+                        </div>
+                        <div className="row">
+                        <BedAvlCard type="ICU without Ventilator" count={props.item?.icuWithoutVentilator}></BedAvlCard>
+                        <BedAvlCard  type="ICU with Ventilator" count={props.item?.icuWithVentilator}></BedAvlCard>
+                        </div>
+                    </div>
                     {props.item.isVerified && <i style={{ color: '#09B22E', position: 'absolute', top: 3, right: 10 }} class="fas fa-check-circle"></i>}
                 </div>
-                <i style={{ position: 'absolute', bottom: 5, right: 10 }} class="fal fa-thumbs-up"></i><span className='pl-1'>20{props.item.votes}</span>
-                <i style={{ position: 'absolute', bottom: 5, right: 10 }} class="fal fa-thumbs-downs"></i>
-                <p style={{ position: 'absolute', bottom: 0, left: '40%', margin: 0, fontSize: '10px' }}>Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY')}</p>
+                <p className="footer">Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY')}</p>
             </div>
         </div>
     )

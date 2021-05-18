@@ -7,7 +7,7 @@ const HomePage = () => {
             colourId: 0,
             title: 'Hospital & Beds',
             icon: "fas fa-procedures",
-            to: '/bedtype'
+            to: '/bedlist'
         },
         {
             id: 2,
