@@ -11,7 +11,7 @@ const DoctorsListPage = () => {
     useEffect(() => {
         axios.get('http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/doctors?cityId=5')
             .then((response => {
-                console.log(response)
+                // console.log(response)
                 setItems(response.data.payload)
             }));
 
