@@ -22,7 +22,10 @@ const MedEquipCard =(props)=>{
             Address:{props.item?.location?.address}<br/>
             Note:{props.item.notes}
             </p>
-        {props.item.isVerified && <i style={{color: '#09B22E',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>}
+        {props.item.isVerified && <p className="verified" >
+            Verified
+        <i  class="fas fa-check-circle"></i>
+        </p>}
         </div>
         {/* <i style={{position:'absolute',bottom:5,right:10}} class="fal fa-thumbs-up"><span className='pl-1'>20{props.item.votes}</span></i> */}
         <p style={{position:'absolute',bottom:0,left:'40%',margin:0,fontSize:'10px'}}>Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY') }</p>
