@@ -17,12 +17,17 @@ const AmbulanceCard =(props)=>{
             <p style={{textAlign:'left',fontSize:'14px'}} className='m-1'>
             <span style={{fontWeight:'bold'}}>{props.item?.ambulanceName}</span><br/>
             <span style={{fontWeight:'bold'}}>Timing:</span>{props.item?.timing}<br/>
-            <span style={{fontWeight:'bold',fontSize:'14px'}}>Accepts Covid Patients:{props.item?.acceptsCovidPatient?<i class="fas fa-check-circle text-success"></i>:<i class="fas fa-times-circle text-danger"></i>}</span><br/>
-            <span style={{fontWeight:'bold',fontSize:'14px'}}>Oxygen Facility:{props.item?.oxygenAvailable?<i class="fas fa-check-circle text-success"></i>:<i class="fas fa-times-circle text-danger"></i>}</span><br/>
-            <span style={{fontWeight:'bold',fontSize:'14px'}}>OutStation Service:{props.item?.providesOutstationService?<i class="fas fa-check-circle text-success"></i>:<i class="fas fa-times-circle text-danger"></i>}</span><br/>
-            <span style={{fontWeight:'bold',fontSize:'14px'}}>Air Conditioned:{props.item?.isAirConditioned?<i class="fas fa-check-circle text-success"></i>:<i class="fas fa-times-circle text-danger"></i>}</span><br/>
+            <span style={{fontWeight:'bold',fontSize:'14px'}}>Accepts Covid Patients:{props.item?.acceptsCovidPatient?<i class="fas fa-check text-success"></i>:<i class="fas fa-times text-danger"></i>}</span><br/>
+            <span style={{fontWeight:'bold',fontSize:'14px'}}>Oxygen Facility:{props.item?.oxygenAvailable?<i class="fas fa-check text-success"></i>:<i class="fas fa-times text-danger"></i>}</span><br/>
+            <span style={{fontWeight:'bold',fontSize:'14px'}}>OutStation Service:{props.item?.providesOutstationService?<i class="fas fa-check text-success"></i>:<i class="fas fa-times text-danger"></i>}</span><br/>
+            <span style={{fontWeight:'bold',fontSize:'14px'}}>Air Conditioned:{props.item?.isAirConditioned?<i class="fas fa-check text-success"></i>:<i class="fas fa-times text-danger"></i>}</span><br/>
             </p>
-        {/* {props.item.isVerified && <i style={{color: '#09B22E',fontSize:'25px',position:'absolute',top:3,right:10}} class="fas fa-check-circle"></i>} */}
+        {props.item.isVerified && 
+        <p className="verified" >
+            Verified
+        <i  class="fas fa-check-circle"></i>
+        </p>
+        }
         </div>
         {/* <i style={{position:'absolute',bottom:5,right:40}} class="fal fa-thumbs-up"></i><span className='pl-1'>{props.item.votes}</span><i style={{position:'absolute',bottom:5,right:10}} class="fal fa-thumbs-down"></i> */}
         <p style={{position:'absolute',bottom:0,left:'40%',margin:0,fontSize:'10px'}}>Updated On:{moment(props.item.updatedOn).format('DD/MM/YYYY') }</p>
