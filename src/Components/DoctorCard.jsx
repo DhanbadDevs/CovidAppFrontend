@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Doctor from "../Assets/doctor.png";
 import {
   LastUpdatedOn,
@@ -45,6 +45,16 @@ const IconSection = (props) => {
 };
 
 const DetailSection = (props) => {
+  const [expand, setExpand] = useState(false);
+  const textStyle = {
+    ellipsis: {
+      overflow: "hidden",
+      whiteSpace: "nowrap",
+      textOverflow: "ellipsis",
+    },
+    normal: {},
+  };
+
   return (
     <div
       className="DetailSection col-8 m-0 mb-1"
@@ -60,15 +70,19 @@ const DetailSection = (props) => {
           <span className="h4">{props?.item?.doctorName}</span>
           <br />
 
-          <div className="text-muted">
-            <b>Designation : </b> {props.item.designation}
-            <br />
-            <b>Experience : </b> {props.item.experience}
-            <br />
-            <b>Qualification : </b> {props.item.qualification}
+          <div
+            className="text-muted"
+            onClick={() => setExpand(!expand)}
+            style={expand ? textStyle.normal : textStyle.ellipsis}
+          >
+            {props.item.qualification}
             <br />
           </div>
         </div>
+        <b>Designation : </b> {props.item.designation}
+        <br />
+        <b>Experience : </b> {props.item.experience}
+        <br />
         <b>Timing :</b> {props.item.timing}
         <br />
         <b>Meeting Medium :</b>{" "}
@@ -84,9 +98,9 @@ const DetailSection = (props) => {
 
 const DoctorCard = (props) => {
   return (
-    <div className="col-12 mb-3">
+    <div className="col-12 my-3">
       <div
-        className="row shadow"
+        className="row shadow pr-2"
         style={{
           position: "relative",
           backgroundColor: "#E4F7FF",

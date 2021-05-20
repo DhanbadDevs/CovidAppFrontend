@@ -34,6 +34,9 @@ import Navbar from 'react-bootstrap/Navbar'
 import OxygenListPage from './Pages/Oxygen/OxygenListPage';
 import HelplinePage from './Pages/Helpline/HelplinePage';
 
+// import FeedbackForm
+import FeedbackForm from './Components/FeedbackForm';
+
 function App() {
 
   // http://covidapp-dev.ap-south-1.elasticbeanstalk.com/swagger/index.html
@@ -81,6 +84,9 @@ function App() {
     </Route>
     <Route path='/helplinelist'>
       <HelplinePage />
+    </Route>
+    <Route path='/feedback'>
+        <FeedbackForm />
     </Route>
     
       <Route path='/'>
