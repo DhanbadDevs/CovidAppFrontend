@@ -66,13 +66,8 @@
     display: none;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    margin: 0;
-    font-size: 11px;
-}
+
+
 
 .helplineLink {
     background-color: #FE9574;
@@ -91,8 +86,31 @@
 }
 
 
-/* style= {
-    {
-        color: '#09B22E', fontSize: '14px', position: 'absolute', top: 3, right: 10
-    }
-} */
+
+.footer{
+  position:absolute;
+  bottom: 0;
+  margin: 0;
+  font-size: 11px;
+  left: 40%;
+}
+
+.avl-bed-count{
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  line-height: 1;
+  padding: 6px 4px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+}
+
+.tot-bed-count{
+  border-radius: 10px;
+  line-height: 1;
+  padding: 6px 4px;
+  font-weight: bold;
+  font-size: 14px;
+  height: 30px;
+}

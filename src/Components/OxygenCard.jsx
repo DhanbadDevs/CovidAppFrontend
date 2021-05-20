@@ -32,6 +32,7 @@ const OxygenCard =(props)=>{
         <i  class="fas fa-check-circle"></i>
             Verified
         </p>}
+       
         </div>
         </div>
     )
