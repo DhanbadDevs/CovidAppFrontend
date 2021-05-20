@@ -104,7 +104,7 @@ return (
                         height="40"
                         className="d-inline-block align-top mt-1"
                     />{' '}
-                    <h1 style={{ color: "#FFF", }} className='d-inline-block' >CovidApp</h1>
+                    <h1 style={{ color: "#FFF",}} className='d-inline-block' >CovidApp</h1>
                 </Navbar.Brand>
             </Navbar>
       <Switch> {routes} </Switch>
