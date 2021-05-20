@@ -98,7 +98,7 @@ const DetailSection = (props) => {
 
 const DoctorCard = (props) => {
   return (
-    <div className="col-12 mb-3">
+    <div className="col-12 my-3">
       <div
         className="row shadow pr-2"
         style={{
