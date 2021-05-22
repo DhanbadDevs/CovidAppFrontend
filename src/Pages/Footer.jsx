@@ -2,7 +2,7 @@ import React from 'react'
 const Footer = () => {
     return(
 
-        <footer class="page-footer font-small w-100" style={{backgroundColor:"rgb(1, 24, 39)",border:"1px solid rgb(1, 24, 39)"}}>
+        <footer class="font-small w-100" style={{backgroundColor:"#011827"}}>
         
           <div class="container">
 
@@ -20,7 +20,7 @@ const Footer = () => {
         
             <div class="row pb-1">
         
-              <div class="col-md-12">
+              <div class="col-md-12 p-0">
         
                 <div class="mb-3 text-center justify-content-center">
         
@@ -30,17 +30,11 @@ const Footer = () => {
                   <a class="tw-ic">
                     <i class="fab fa-twitter fa-lg text-white mr-4"> </i>
                   </a>
-                  <a class="gplus-ic">
-                    <i class="fab fa-google-plus-g fa-lg text-white mr-4"> </i>
-                  </a>
                   <a class="li-ic">
                     <i class="fab fa-linkedin-in fa-lg text-white mr-4"> </i>
                   </a>
                   <a class="ins-ic">
                     <i class="fab fa-instagram fa-lg text-white mr-4"> </i>
-                  </a>
-                  <a class="pin-ic">
-                    <i class="fab fa-pinterest fa-lg text-white"> </i>
                   </a>
         
                 </div>
