@@ -30,12 +30,14 @@ import AmbulanceListPage from './Pages/Ambulance/AmbulanceListPage'
 import OthersListPage from './Pages/Others/OthersListPage'
 
 
-import Navbar from 'react-bootstrap/Navbar'
 import OxygenListPage from './Pages/Oxygen/OxygenListPage';
 import HelplinePage from './Pages/Helpline/HelplinePage';
 
 // import FeedbackForm
 import FeedbackForm from './Components/FeedbackForm';
+import Footer from './Pages/Footer';
+import Header from './Pages/Header';
+
 
 function App() {
 
@@ -95,26 +97,19 @@ function App() {
       <Redirect to='/' />
     </Switch>
   )
-
-
 return (
   // <AppContextProvider>
-    <Router>
+  
+    <Router >
       {/* <Header /> */}
-      <Navbar bg="custom" variant="blue">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt=""
-                        src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2020/03/hilf-jetzt-logo-ohne-text.png"
-                        width="40"
-                        height="40"
-                        className="d-inline-block align-top mt-1"
-                    />{' '}
-                    <h1 style={{ color: "#FFF",}} className='d-inline-block' >CovidApp</h1>
-                </Navbar.Brand>
-            </Navbar>
-      <Switch> {routes} </Switch>
+      <div className="d-flex flex-column min-vh-100">
+      <Header/>
+      <div className="flex-grow-1">
+        <Switch> {routes} </Switch>
+      </div>
         {/* <Footer /> */}
+        <Footer/>
+        </div>
       {/* <BottomNavigator/> */}
     </Router>
   // </AppContextProvider>
