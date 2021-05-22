@@ -14,7 +14,7 @@ const MedEquipsListPage=()=>{
              }))
     },[])
     return(
-        <div>
+        <div  className="row ">
        { items?.map(item=><MedEquipCard item={item} />)}
         </div>
     )

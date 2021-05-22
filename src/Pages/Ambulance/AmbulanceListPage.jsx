@@ -14,8 +14,8 @@ const AmbulanceListPage=()=>{
              }))
     },[])
     return(
-        <div>
-       { items?.map(item=><AmbulanceCard item={{...item,phone:'1234567890,8097651243'}} />)}
+        <div className="row">
+       { items?.map(item=><AmbulanceCard item={item} />)}
         </div>
     )
 }

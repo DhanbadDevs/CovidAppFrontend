@@ -14,7 +14,7 @@ const HelplinePage=()=>{
              }))
     },[])
     return (
-        <div className='container py-3'>
+        <div className='py-3 row'>
             {
                 items?.map(item=><HelplineCard item={item} />)
             }

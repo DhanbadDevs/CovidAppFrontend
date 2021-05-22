@@ -107,10 +107,7 @@ return (
       <div className="flex-grow-1">
         <Switch> {routes} </Switch>
       </div>
-        {/* <Footer /> */}
-        <Footer/>
-        </div>
-      {/* <BottomNavigator/> */}
+        <Footer /></div>
     </Router>
   // </AppContextProvider>
 )
