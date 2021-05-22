@@ -14,7 +14,7 @@ const BedListPage=()=>{
              }))
     },[])
     return(
-        <div>
+        <div className="row p-0">
        { items?.map(item=><BedCard item={item} />)}
         </div>
     )

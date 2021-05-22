@@ -14,7 +14,7 @@ const GuidelinesListPage=()=>{
              }))
     },[])
     return(
-        <div>
+        <div className="row">
        { items?.map(item=><BedCard item={item} />)}
         </div>
     )

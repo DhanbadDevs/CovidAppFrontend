@@ -18,7 +18,7 @@ const DoctorsListPage = () => {
     }, [])
 
     return(
-        <div>
+        <div className="row">
         { items?.map(item => <DoctorCard key={item?.id} item={item} />)}
         </div>
     )

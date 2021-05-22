@@ -16,7 +16,7 @@ const OxygenListPage=()=>{
              }))
     },[])
     return(
-        <div>
+        <div className='row '>
        { items?.map(item=><OxygenCard item={{...item}} />)}
         </div>
     )

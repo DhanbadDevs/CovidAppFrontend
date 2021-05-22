@@ -13,8 +13,8 @@ const BedAvlCard=(props)=>{
     
     return(
 
-        <div className="p-2 col-6">
-            <p className="text-center" style={{fontSize:"12px",fontWeight:"bold",textDecoration:"underline",marginBottom:"8px"}}>{props.type}</p>
+        <div className="col-6">
+            <p className="text-center" style={{fontSize:"12px",fontWeight:"bold",textDecoration:"underline",marginBottom:"8px",width:"100px"}}>{props.type1}<br/>{props.type2}</p>
             <div className="d-flex justify-content-center align-self-center">
                 <div className="col-4 avl-bed-count " style={{ backgroundColor:percentAvl>.3?colours[2]:(percentAvl>0?colours[1]:colours[0])}}>
                     {avlCount}
