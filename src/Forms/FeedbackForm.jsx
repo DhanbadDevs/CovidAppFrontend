@@ -5,19 +5,36 @@ import Hand from "../Assets/hand.png";
 
 const FeedbackForm = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    data = { ...data, cityId: Number.parseInt(data.cityId) };
+    console.log(JSON.stringify(data));
+    axios.post(
+      process.env.REACT_APP_BASE_URL + "/api/master/feedbacks",
+      JSON.stringify(data),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
 
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
     axios
-      .get(
-        "http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/master/city"
-      )
+      .get(process.env.REACT_APP_BASE_URL + "/api/master/city")
       .then((response) => {
         setCities(response?.data?.payload);
       });
   }, []);
+
+  const style = {
+    formControl: {
+      borderRadius: "10px",
+      marginBottom: "5px",
+    },
+  };
 
   return (
     <div className="container">
@@ -45,6 +62,11 @@ const FeedbackForm = () => {
               type="text"
               {...register("name")}
               className="form-control col"
+              style={style.formControl}
+              w
+              style={style.formControl}
+              w
+              style={style.formControl}
               required
               id="name"
             />
@@ -58,6 +80,11 @@ const FeedbackForm = () => {
               type="email"
               {...register("email")}
               className="form-control col"
+              style={style.formControl}
+              w
+              style={style.formControl}
+              w
+              style={style.formControl}
               required
               id="email"
             />
@@ -69,8 +96,13 @@ const FeedbackForm = () => {
             </label>
             <input
               type="number"
-              {...register("phone", { pattern: "/[0-9]{10}/" })}
+              {...register("phone")}
               className="form-control col"
+              style={style.formControl}
+              w
+              style={style.formControl}
+              w
+              style={style.formControl}
               id="phone"
             />
           </div>
@@ -84,6 +116,11 @@ const FeedbackForm = () => {
                 pattern: "/.+/",
               })}
               className="form-control col"
+              style={style.formControl}
+              w
+              style={style.formControl}
+              w
+              style={style.formControl}
               required
               id="city"
               required
@@ -105,6 +142,11 @@ const FeedbackForm = () => {
             <textarea
               {...register("comment")}
               className="form-control col"
+              style={style.formControl}
+              w
+              style={style.formControl}
+              w
+              style={style.formControl}
               required
               id="comment"
               rows="3"
@@ -129,9 +171,9 @@ const FeedbackForm = () => {
           style={{
             position: "relative",
             width: "300px",
-            alignSelf: "center",
-            marginBottom: "10px",
-            marginTop: "-100px",
+            marginBottom: "-50px",
+            marginTop: "-140px",
+            zIndex: -1,
           }}
         />
       </div>

@@ -1,9 +1,29 @@
 import { useForm } from "react-hook-form";
 import Hand from "../Assets/hand.png";
+import axios from "axios";
 
 const FeedbackForm = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    console.log(JSON.stringify(data));
+    axios.post(
+      process.env.REACT_APP_BASE_URL + "/api/master/volunteers",
+      JSON.stringify(data),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
+
+  const style = {
+    formControl: {
+      borderRadius: "10px",
+      marginBottom: "5px",
+    },
+  };
 
   return (
     <div className="container">
@@ -31,6 +51,7 @@ const FeedbackForm = () => {
               type="text"
               {...register("volunteerName")}
               className="form-control col"
+              style={style.formControl}
               required
               id="name"
             />
@@ -44,6 +65,7 @@ const FeedbackForm = () => {
               type="email"
               {...register("email")}
               className="form-control col"
+              style={style.formControl}
               required
               id="email"
             />
@@ -55,8 +77,9 @@ const FeedbackForm = () => {
             </label>
             <input
               type="number"
-              {...register("phone", { pattern: "/[0-9]{10}/" })}
+              {...register("phone")}
               className="form-control col"
+              style={style.formControl}
               id="phone"
             />
           </div>
@@ -67,6 +90,7 @@ const FeedbackForm = () => {
             <input
               {...register("city")}
               className="form-control col"
+              style={style.formControl}
               id="city"
               required
             />
@@ -78,6 +102,7 @@ const FeedbackForm = () => {
             <input
               {...register("occupation")}
               className="form-control col"
+              style={style.formControl}
               id="occupation"
               required
             />
@@ -89,6 +114,7 @@ const FeedbackForm = () => {
             <input
               {...register("timing")}
               className="form-control col"
+              style={style.formControl}
               id="timing"
               required
             />
@@ -101,7 +127,7 @@ const FeedbackForm = () => {
             <textarea
               {...register("about")}
               className="form-control col"
-              required
+              style={style.formControl}
               id="about"
               rows="3"
             ></textarea>
@@ -111,8 +137,7 @@ const FeedbackForm = () => {
             <button
               type="submit"
               className="btn btn-primary"
-            style={{ backgroundColor: "#0A8972",
-            borderRadius: "10px"}}
+              style={{ backgroundColor: "#0A8972", borderRadius: "10px" }}
             >
               Submit
             </button>
@@ -126,9 +151,9 @@ const FeedbackForm = () => {
           style={{
             position: "relative",
             width: "300px",
-            alignSelf: "center",
-            marginBottom: "10px",
-            marginTop: "-100px",
+            marginBottom: "-50px",
+            marginTop: "-140px",
+            zIndex: -1,
           }}
         />
       </div>

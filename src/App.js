@@ -36,6 +36,8 @@ import HelplinePage from './Pages/Helpline/HelplinePage';
 // import FeedbackForm
 import FeedbackForm from './Forms/FeedbackForm';
 import VolunteerForm from './Forms/VolunteerForm';
+import Header from './Pages/Header';
+import Footer from './Pages/Footer'
 
 
 function App() {
