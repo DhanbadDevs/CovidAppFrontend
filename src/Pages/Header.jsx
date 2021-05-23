@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom"
 import Navbar from 'react-bootstrap/Navbar'
 import { useHistory } from "react-router-dom";
 import Back from '../Assets/back.png'
-
+import Logo from '../Assets/logo.png'
 
 const  Header=(props)=> {
     let history = useHistory();
@@ -15,29 +15,30 @@ const  Header=(props)=> {
            case "/oxygenlist":heading="OXYGEN";break;
            case "/doctorslist":heading="DOCTOR";break;
            case "/helplinelist":heading="HELPLINE";break;
-           default :heading="COVID APP"
+           default :heading=""
        }
        if(window.location.pathname.includes("/medlist"))
        heading="MEDICINE & EQUIPMENT"
     return(
-<Navbar bg="custom" variant="blue" className="py-0">
+        <div style={{backgroundColor:'#0A3441',height:'48px',overflow:'hidden'}}>
+
+<Navbar bg="custom" variant="blue" className="py-0" height="40">
                 <Navbar.Brand >
-                <div className="align-middle">
                   <div className="d-inline-block align-middle mb-2">
                     <img
                         alt=""
-                        src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2020/03/hilf-jetzt-logo-ohne-text.png"
-                        width="35"
-                        height="35"
+                        src={Logo}
+                        width="102"
+                        height="38"
                         className=""
                         style={{display:(window.location.pathname==="/")?"block":"none"}}
                     />
                     <img src={Back}  onClick={() => history.goBack()} style={{display:(window.location.pathname!=="/")?"block":"none",fontSize:"40px"}}/>
                     </div>
-                    <h4 style={{ color: "#FFF"}} className='d-inline-block ml-3' >{heading}</h4>
-                </div>
+                    <h6 style={{ color: "#FFF"}} className='d-inline-block ml-3' >{heading}</h6>
                 </Navbar.Brand>
             </Navbar>
+        </div>
 
     )
 }
