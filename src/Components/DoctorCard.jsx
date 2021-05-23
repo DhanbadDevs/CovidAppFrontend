@@ -22,7 +22,7 @@ const IconSection = (props) => {
         alt="doctor icon"
         style={{ width: "50px", alignSelf: "center", marginBottom: "10px" }}
       />
-      <div
+      <div className="text-center"
         style={{
           backgroundColor: "#55C3DB",
           margin: "5px",
@@ -98,7 +98,7 @@ const DetailSection = (props) => {
 
 const DoctorCard = (props) => {
   return (
-    <div className="col-12 my-3">
+    <div className="col-12 row col-md-6 col-md-4 my-3" style={{}}>
       <div
         className="row shadow pr-2"
         style={{
@@ -106,7 +106,7 @@ const DoctorCard = (props) => {
           backgroundColor: "#E4F7FF",
           padding: "20px 0",
           width: "100%",
-          margin: "auto",
+          margin: "0",
           borderRadius: "10px",
         }}
       >

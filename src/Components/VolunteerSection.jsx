@@ -3,16 +3,12 @@ const VolunteerSection =()=>{
     return (
         <div style={styles.cardholder}>
             <div style={styles.card}>
-                <h6 style={{fontWeight:'bold'}}>HAVE ANY LEAD</h6>
-                <p className='m-0'>click here to submit info</p>
-            </div>
-            <div style={styles.card}>
-                <h6 style={{fontWeight:'bold'}}>GIVE FEEDBACK</h6>
-                <p className='m-0'>click here </p>
+                <h6 style={{fontWeight:'bold'}}>HAVE ANY FEEDBACK</h6>
+                <p className='m-0'>Click Here</p>
             </div>
             <div style={styles.card}>
                 <h6 style={{fontWeight:'bold'}}>VOLUNTEER WITH US</h6>
-                <p className='m-0'>click here </p>
+                <p className='m-0'>Coming Soon... </p>
             </div>
         </div>
     )

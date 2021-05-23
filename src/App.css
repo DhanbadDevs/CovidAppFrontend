@@ -66,9 +66,6 @@
     display: none;
 }
 
-
-
-
 .helplineLink {
     background-color: #FE9574;
     margin: 10px 0;
@@ -85,32 +82,35 @@
     right: 10px
 }
 
-
-
-.footer{
-  position:absolute;
-  bottom: 0;
-  margin: 0;
-  font-size: 11px;
-  left: 40%;
+.footer {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    font-size: 11px;
+    left: 40%;
 }
 
-.avl-bed-count{
-  border-radius: 10px;
-  color: white;
-  text-align: center;
-  line-height: 1;
-  padding: 6px 4px;
-  font-weight: bold;
-  font-size: 14px;
-  height: 30px;
+.avl-bed-count {
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    line-height: 1;
+    padding: 6px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
 }
 
-.tot-bed-count{
-  border-radius: 10px;
-  line-height: 1;
-  padding: 6px 4px;
-  font-weight: bold;
-  font-size: 14px;
-  height: 30px;
+.tot-bed-count {
+    border-radius: 10px;
+    line-height: 1;
+    padding: 6px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
+}
+
+.row {
+    margin: 0;
+    align-items: stretch;
 }
