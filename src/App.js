@@ -35,7 +35,8 @@ import OxygenListPage from './Pages/Oxygen/OxygenListPage';
 import HelplinePage from './Pages/Helpline/HelplinePage';
 
 // import FeedbackForm
-import FeedbackForm from './Components/FeedbackForm';
+import FeedbackForm from './Forms/FeedbackForm';
+import VolunteerForm from './Forms/VolunteerForm';
 
 function App() {
 
@@ -85,9 +86,13 @@ function App() {
     <Route path='/helplinelist'>
       <HelplinePage />
     </Route>
-    <Route path='/feedback'>
+    <Route path='/form/feedback'>
         <FeedbackForm />
     </Route>
+    <Route path='/form/volunteer'>
+        <VolunteerForm />
+    </Route>
+    
     
       <Route path='/'>
         <HomePage />
