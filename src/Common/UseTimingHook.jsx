@@ -13,16 +13,16 @@ const useTiming = () => {
     <input
       type="time"
       {...register("timingfrom")}
-      className="form-control col"
+      className="form-control p-0 text-center col"
       style={style.formControl}
       id="timing"
       required
     />
-    <span className="px-2 pt-2">{" to "}</span>
+    <span className=" p-0 col-1 text-center align-items-center d-flex justify-content-center" style={{marginBottom:"5px"}}>{" to "}</span>
     <input
       {...register("timingto")}
       type="time"
-      className="form-control col"
+      className="form-control p-0 text-center col"
       style={style.formControl}
       id="timing"
       required
