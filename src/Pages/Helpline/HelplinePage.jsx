@@ -7,14 +7,14 @@ const HelplinePage=()=>{
 	const query=new URLSearchParams(location.search)
     const [items,setItems]=useState()
     useEffect(()=>{
-        axios.get('http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/master/helplines?cityId=5')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/api/master/helplines?cityId=${process.env.REACT_APP_CITY}`)
              .then((response=>{
                  console.log(response)
                  setItems(response.data.payload)
              }))
     },[])
     return (
-        <div className='py-3 row'>
+        <div className='row align-items-lg-stretch'>
             {
                 items?.map(item=><HelplineCard item={item} />)
             }

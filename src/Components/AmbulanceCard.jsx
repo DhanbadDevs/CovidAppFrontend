@@ -2,14 +2,16 @@ import React from 'react'
 import Ambulance from '../Assets/ambulance.png'
 import moment from 'moment'
 const AmbulanceCard =(props)=>{
+    const phoneNumbers=props.item.phone.split(',')
+    phoneNumbers.length=2
     return(
-        <div className="col-12 col-md-6 col-md-4 my-3">
-        <div className="row shadow pr-1" style={{position:'relative',backgroundColor:"#E4F7FF",padding:'20px 0',width:'100%',margin:'auto',borderRadius:'10px'}}>
+        <div className="row col-12 col-md-6 col-md-4 my-3">
+        <div className="row shadow pr-1 m-0" style={{position:'relative',backgroundColor:"#E4F7FF",padding:'20px 0',width:'100%',margin:'auto',borderRadius:'10px'}}>
         
         <div className="col-4 p-0" style={{display:'flex',flexDirection:'column',justifyContent: 'flex-end',alignItems: 'stretch'}}>
         <img src={Ambulance} style={{width:'50px',alignSelf:'center',marginBottom:'10px'}} />
             <div className="text-center" style={{backgroundColor:"#55C3DB" ,margin:'5px',padding:'3px 10px',borderRadius:'20px',fontSize:'14px',zIndex:10}}>Cost:{props.item?.charges}</div>
-            {props.item.phone.split(',').map(phone=>
+            {phoneNumbers.map(phone=>
             <a href={`tel:${phone}`} style={{color:'#000',textDecoration:'none',zIndex:10}}>
 
             <div className="text-center" style={{backgroundColor:"#FE9574" ,margin:'5px',padding:'3px 10px',borderRadius:'20px',fontSize:'14px'}}>{phone}</div>
