@@ -1,11 +1,16 @@
 import { useForm } from "react-hook-form";
 import Hand from "../Assets/hand.png";
 import axios from "axios";
+import useTiming from "../Common/UseTimingHook";
 
 const FeedbackForm = () => {
   const { register, handleSubmit } = useForm();
 
+  const { inputTiming, getTiming } = useTiming();
+
   const onSubmit = (data) => {
+    data = getTiming(data);
+
     console.log(JSON.stringify(data));
     axios.post(
       process.env.REACT_APP_BASE_URL + "/api/master/volunteers",
@@ -107,18 +112,7 @@ const FeedbackForm = () => {
               required
             />
           </div>
-          <div className="form-group row">
-            <label className="col-4" htmlFor="timing">
-              timing
-            </label>
-            <input
-              {...register("timing")}
-              className="form-control col"
-              style={style.formControl}
-              id="timing"
-              required
-            />
-          </div>
+          {inputTiming(style, register)}
           <div className="form-group row">
             <label className="col-4" htmlFor="about">
               {" "}
