@@ -7,7 +7,7 @@ const MedEquipsListPage=()=>{
 	const query=new URLSearchParams(location.search)
     const [items,setItems]=useState()
     useEffect(()=>{
-        axios.get(`http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/medicines/medicalshops?cityId=5&medicineEquippmentId=${query.get('id')}`)
+        axios.get(`${process.env.REACT_APP_BASE_URL}/api/medicines/medicalshops?cityId=${process.env.REACT_APP_CITY}&medicineEquippmentId=${query.get('id')}`)
              .then((response=>{
                  console.log(response)
                  setItems(response.data.payload)

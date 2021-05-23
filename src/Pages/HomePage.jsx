@@ -3,6 +3,8 @@ import HelpLineLink from '../Components/HelpLineLink'
 import ItemCard from '../Components/ItemCard'
 import VolunteerSection from '../Components/VolunteerSection'
 const HomePage = () => {
+    console.log('process.env.REACT_APP_BASE_URL')
+    console.log(process.env.REACT_APP_BASE_URL)
     const items = [
         {
             id: 1,

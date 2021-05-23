@@ -7,7 +7,7 @@ const BedListPage=()=>{
 	const query=new URLSearchParams(location.search)
     const [items,setItems]=useState()
     useEffect(()=>{
-        axios.get('http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/hospitalbeds?bedType=Oxygen%20Beds&cityId=5')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/api/hospitalbeds?bedType=Oxygen%20Beds&cityId=${process.env.REACT_APP_CITY}`)
              .then((response=>{
                  console.log(response)
                  setItems(response.data.payload)

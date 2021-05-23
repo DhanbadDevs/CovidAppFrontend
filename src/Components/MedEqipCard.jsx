@@ -3,8 +3,8 @@ import Bed from '../Assets/bed.png'
 import moment from 'moment'
 const MedEquipCard =(props)=>{
     return(
-        <div className="col-12 col-md-6 col-md-4 my-3 px-3 px-md-3">
-        <div className="row shadow pr-1" style={{position:'relative',backgroundColor:"#E4F7FF",padding:'20px 0',width:'100%',margin:'auto',borderRadius:'10px'}}>
+        <div className="row col-12 col-md-6 col-md-4 my-3 px-3 px-md-3">
+        <div className="row shadow pr-1 m-0" style={{position:'relative',backgroundColor:"#E4F7FF",padding:'20px 0',width:'100%',margin:'auto',borderRadius:'10px'}}>
         
         <div className="col-4 p-0" style={{display:'flex',flexDirection:'column',justifyContent: 'flex-end',alignItems: 'stretch'}}>
             <img src={Bed} style={{width:'50px',alignSelf:'center',marginBottom:'10px'}}/>

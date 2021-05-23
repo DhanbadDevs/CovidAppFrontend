@@ -9,7 +9,7 @@ const DoctorsListPage = () => {
     const [items,setItems] = useState()
 
     useEffect(() => {
-        axios.get('http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/doctors?cityId=5')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/api/doctors?cityId=${process.env.REACT_APP_CITY}`)
             .then((response => {
                 // console.log(response)
                 setItems(response.data.payload)
