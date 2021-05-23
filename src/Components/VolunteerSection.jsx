@@ -4,11 +4,11 @@ const VolunteerSection =()=>{
         <div style={styles.cardholder}>
             <div style={styles.card}>
                 <h6 style={{fontWeight:'bold'}}>HAVE ANY FEEDBACK</h6>
-                <p className='m-0'>Click Here</p>
+                <p className='m-0'><a href="/form/feedback">Click Here</a></p>
             </div>
             <div style={styles.card}>
                 <h6 style={{fontWeight:'bold'}}>VOLUNTEER WITH US</h6>
-                <p className='m-0'>Coming Soon... </p>
+                <p className='m-0'><a href="/form/volunteer">Click Here</a></p>
             </div>
         </div>
     )
