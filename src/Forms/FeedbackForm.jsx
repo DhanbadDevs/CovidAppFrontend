@@ -170,9 +170,7 @@ const FeedbackForm = () => {
           alt="hand icon"
           style={{
             position: "relative",
-            width: "300px",
-            marginBottom: "-50px",
-            marginTop: "-140px",
+            width: "250px",
             zIndex: -1,
           }}
         />
