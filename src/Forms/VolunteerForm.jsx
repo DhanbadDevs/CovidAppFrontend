@@ -2,9 +2,16 @@ import { useForm } from "react-hook-form";
 import Hand from "../Assets/hand.png";
 import axios from "axios";
 import useTiming from "../Common/UseTimingHook";
+import { useState } from "react";
 
 const FeedbackForm = () => {
   const { register, handleSubmit } = useForm();
+
+  const [message, setMessage, reset] = useState({
+    hidden: true,
+    success: true,
+    text: "Thank you for your volunteering",
+  });
 
   const { inputTiming, getTiming } = useTiming();
 
@@ -21,31 +28,57 @@ const FeedbackForm = () => {
         },
       }
     );
+    reset({});
+    setMessage({
+      hidden: false,
+      success: true,
+      text: "success",
+    });
   };
 
   const style = {
+    formAlert: {
+      borderRadius: "10px",
+      marginTop: "5px",
+    },
     formControl: {
       borderRadius: "10px",
       marginBottom: "5px",
+    },
+    formHeading: {
+      backgroundColor: "#060941",
+      color: "#fff",
+      borderRadius: "10px",
+      padding: "2px 0px 2px 10px",
+      marginLeft: "-3px",
+      marginRight: "60%",
+    },
+    submitButton: {
+      backgroundColor: "#0A8972",
+      borderRadius: "10px",
+    },
+    handIcon: {
+      position: "relative",
+      width: "200px",
+      zIndex: -1,
     },
   };
 
   return (
     <div className="container">
+      <div
+        className={
+          message.success ? "alert alert-success" : "alert alert-danger"
+        }
+        role="alert"
+        style={style.formAlert}
+        hidden={message.hidden}
+      >
+        {message.text}
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="pr-2 mt-3">
-          <p
-            style={{
-              backgroundColor: "#060941",
-              color: "#fff",
-              borderRadius: "10px",
-              padding: "2px 0px 2px 10px",
-              marginLeft: "-3px",
-              marginRight: "60%",
-            }}
-          >
-            Volunteer Form
-          </p>
+          <p style={style.formHeading}>Volunteer Form</p>
 
           <div className="form-group row">
             <label className="col-4" htmlFor="name">
@@ -131,7 +164,7 @@ const FeedbackForm = () => {
             <button
               type="submit"
               className="btn btn-primary"
-              style={{ backgroundColor: "#0A8972", borderRadius: "10px" }}
+              style={style.submitButton}
             >
               Submit
             </button>
@@ -139,15 +172,7 @@ const FeedbackForm = () => {
         </div>
       </form>
       <div className="hand text-right mr-0">
-        <img
-          src={Hand}
-          alt="hand icon"
-          style={{
-            position: "relative",
-            width: "250px",
-            zIndex: -1,
-          }}
-        />
+        <img src={Hand} alt="hand icon" style={style.handIcon} />
       </div>
     </div>
   );
