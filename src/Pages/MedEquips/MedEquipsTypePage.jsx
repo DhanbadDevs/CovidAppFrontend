@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 const MedEquipsTypePage=()=>{
     const [medequips,setMedEquips]=useState([])
     useEffect(()=>{
-        axios.get('http://covidapp-dev.ap-south-1.elasticbeanstalk.com/api/medicines')
+        axios.get(`${process.env.REACT_APP_BASE_URL}/api/medicines`)
               .then(response=>setMedEquips(response.data.payload))
     },[])
 
