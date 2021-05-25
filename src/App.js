@@ -41,7 +41,10 @@ import Footer from './Pages/Footer'
 const ScrollToTop = () => {
     const {pathname} = useLocation();
     useEffect(() => {
-        window.scroll(0,0);
+        // for Chrome, Firefox, IE and Opera
+        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+        // for Safari
+        document.body.scrollTo({top: 0, behavior: 'smooth'});
     }, [pathname]);
     return null;
 }
