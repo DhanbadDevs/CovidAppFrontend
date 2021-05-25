@@ -1,13 +1,17 @@
 import React from 'react'
+import HelpLineLink from '../Components/HelpLineLink'
 import ItemCard from '../Components/ItemCard'
+import VolunteerSection from '../Components/VolunteerSection'
 const HomePage = () => {
+    console.log('process.env.REACT_APP_BASE_URL')
+    console.log(process.env.REACT_APP_BASE_URL)
     const items = [
         {
             id: 1,
             colourId: 0,
             title: 'Hospital & Beds',
             icon: "fas fa-procedures",
-            to: '/bedtype'
+            to: '/bedlist'
         },
         {
             id: 2,
@@ -16,35 +20,6 @@ const HomePage = () => {
             icon: "fas fa-pills",
             to: '/medtype'
         },
-        // {
-        //     id: 3,
-        //     colourId: 1,
-        //     title: 'Vaccine',
-        //     icon: "fas fa-syringe",
-        //     to: '/vaccinelist'
-        // },
-
-        // {
-        //     id: 4,
-        //     colourId: 0,
-        //     title: 'Blood & Plasma',
-        //     icon: "fas fa-tint",
-        //     to: '/bloodplasmatype'
-        // },
-        // {
-        //     id: 5,
-        //     colourId: 0,
-        //     title: 'NGO',
-        //     icon: "fas fa-hands-helping",
-        //     to: '/ngolist'
-        // },
-        // {
-        //     id: 6,
-        //     colourId: 1,
-        //     title: 'Guidelines',
-        //     icon: "fas fa-clipboard-list-check",
-        //     to: '/guidelinelist'
-        // },
          {
             id: 7,
             colourId: 1,
@@ -69,14 +44,15 @@ const HomePage = () => {
     ]
     return (
         <div>
-            <div className="container-fluid flex-column mt-3 ">
-                <div className="row">
-                    {items.map(item =>
-                        <ItemCard item={item} />
-                    )}
-
-                </div>
+            <HelpLineLink />
+            <div className="container">
+            <div className="row">
+                {items.map(item =>
+                    <ItemCard key={item.id} item={item} />
+                )}
             </div>
+            </div>
+            <VolunteerSection />
         </div>
     )
 }

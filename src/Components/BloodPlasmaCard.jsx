@@ -3,7 +3,7 @@ import Bed from '../Assets/bed.png'
 import moment from 'moment'
 const BloodPlasmaCard =(props)=>{
     return(
-        <div className="col-12 mb-3">
+        <div className="col-12 col-md-6 col-md-4 my-3">
         <div className="row shadow" style={{position:'relative',backgroundColor:"#E4F7FF",padding:'20px 0',width:'100%',margin:'auto',borderRadius:'10px'}}>
         
         <div className="col-4 p-0" style={{display:'flex',flexDirection:'column',justifyContent: 'flex-end',alignItems: 'stretch'}}>

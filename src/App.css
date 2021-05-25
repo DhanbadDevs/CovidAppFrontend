@@ -38,7 +38,7 @@
 }
 
 .bg-custom {
-    background-color: #9DE0F5;
+    background-color: #0A3441;
 }
 
 .rounded-corner {
@@ -46,8 +46,8 @@
 }
 
 .item-card {
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
     border: 3px solid #7CC1F4;
 }
 
@@ -66,10 +66,51 @@
     display: none;
 }
 
+.helplineLink {
+    background-color: #FE9574;
+    margin: 10px 0;
+    color: #000;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.verified {
+    color: #09B22E;
+    font-size: 14px;
+    position: absolute;
+    top: 2px;
+    right: 10px
+}
+
 .footer {
     position: absolute;
     bottom: 0;
-    right: 10px;
     margin: 0;
     font-size: 11px;
+    left: 40%;
+}
+
+.avl-bed-count {
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    line-height: 1;
+    padding: 6px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
+}
+
+.tot-bed-count {
+    border-radius: 10px;
+    line-height: 1;
+    padding: 6px 4px;
+    font-weight: bold;
+    font-size: 14px;
+    height: 30px;
+}
+
+.row {
+    margin: 0;
+    align-items: stretch;
 }

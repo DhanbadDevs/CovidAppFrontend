@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import {useEffect} from "react";
 import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
 	Redirect,
-	useHistory,
+    useLocation,
 } from 'react-router-dom'
 
 import HomePage from './Pages/HomePage'
@@ -30,9 +29,25 @@ import AmbulanceListPage from './Pages/Ambulance/AmbulanceListPage'
 import OthersListPage from './Pages/Others/OthersListPage'
 
 
-// import Navbar from 'react-bootstrap/Navbar'
 import OxygenListPage from './Pages/Oxygen/OxygenListPage';
 import HelplinePage from './Pages/Helpline/HelplinePage';
+
+// import FeedbackForm
+import FeedbackForm from './Forms/FeedbackForm';
+import VolunteerForm from './Forms/VolunteerForm';
+import Header from './Pages/Header';
+import Footer from './Pages/Footer'
+
+const ScrollToTop = () => {
+    const {pathname} = useLocation();
+    useEffect(() => {
+        // for Chrome, Firefox, IE and Opera
+        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+        // for Safari
+        document.body.scrollTo({top: 0, behavior: 'smooth'});
+    }, [pathname]);
+    return null;
+}
 
 function App() {
 
@@ -82,6 +97,13 @@ function App() {
     <Route path='/helplinelist'>
       <HelplinePage />
     </Route>
+    <Route path='/form/feedback'>
+        <FeedbackForm />
+    </Route>
+    <Route path='/form/volunteer'>
+        <VolunteerForm />
+    </Route>
+    
     
       <Route path='/'>
         <HomePage />
@@ -89,27 +111,18 @@ function App() {
       <Redirect to='/' />
     </Switch>
   )
-
-
 return (
   // <AppContextProvider>
-    <Router>
+  
+    <Router >
       {/* <Header /> */}
-      {/* <Navbar bg="custom" variant="blue">
-                <Navbar.Brand href="#home">
-                    <img
-                        alt=""
-                        src="https://www.eurodiaconia.org/wordpress/wp-content/uploads/2020/03/hilf-jetzt-logo-ohne-text.png"
-                        width="40"
-                        height="40"
-                        className="d-inline-block align-top mt-1"
-                    />{' '}
-                    <h1 style={{ color: "#0A1048", }} className='d-inline-block' >CovidApp</h1>
-                </Navbar.Brand>
-            </Navbar> */}
-      <Switch> {routes} </Switch>
-        {/* <Footer /> */}
-      {/* <BottomNavigator/> */}
+      <ScrollToTop />
+      <div className="d-flex flex-column min-vh-100">
+      <Header/>
+      <div className="flex-grow-1">
+        <Switch> {routes} </Switch>
+      </div>
+        <Footer /></div>
     </Router>
   // </AppContextProvider>
 )
