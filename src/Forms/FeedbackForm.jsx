@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Hand from "../Assets/hand.png";
+import { useHistory } from "react-router-dom";
 
 const FeedbackForm = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -10,9 +11,11 @@ const FeedbackForm = () => {
     success: true,
     text: "",
   });
+  let history = useHistory();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     data = { ...data, cityId: Number.parseInt(data.cityId) };
+
     console.log(JSON.stringify(data));
     axios.post(
       process.env.REACT_APP_BASE_URL + "/api/master/feedbacks",
@@ -29,6 +32,9 @@ const FeedbackForm = () => {
       success: true,
       text: "Thank you for you valuable feedback",
     });
+
+    await new Promise((r) => setTimeout(r, 1000));
+    history.push("/");
   };
 
   const [cities, setCities] = useState([]);

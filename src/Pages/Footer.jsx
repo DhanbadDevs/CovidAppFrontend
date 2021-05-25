@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
     return(
 
@@ -48,7 +49,7 @@ const Footer = () => {
             Contact Us -<a class="text-white" href="tel:9878787121"> 9878787121</a>
           </div>
           <div class="footer-copyright text-center py-1 text-white">© 2021 Copyright:
-            <a href="/"> Covid App</a>
+            <NavLink to="/"> Covid App</NavLink>
           </div>
         
         </footer>

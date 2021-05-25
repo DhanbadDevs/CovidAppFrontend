@@ -3,19 +3,21 @@ import Hand from "../Assets/hand.png";
 import axios from "axios";
 import useTiming from "../Common/UseTimingHook";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const FeedbackForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
-  const [message, setMessage, reset] = useState({
+  const [message, setMessage] = useState({
     hidden: true,
     success: true,
     text: "Thank you for your volunteering",
   });
 
   const { inputTiming, getTiming } = useTiming();
+  let history = useHistory();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     data = getTiming(data);
 
     console.log(JSON.stringify(data));
@@ -32,8 +34,11 @@ const FeedbackForm = () => {
     setMessage({
       hidden: false,
       success: true,
-      text: "success",
+      text: "Thank you for volunteering with us",
     });
+
+    await new Promise((r) => setTimeout(r, 1000));
+    history.push("/");
   };
 
   const style = {
@@ -146,6 +151,20 @@ const FeedbackForm = () => {
             />
           </div>
           {inputTiming(style, register)}
+          <div className="form-group row">
+            <label className="col-4" htmlFor="skills">
+              {" "}
+              Skills{" "}
+            </label>
+            <textarea
+              {...register("skills")}
+              className="form-control col"
+              style={style.formControl}
+              required
+              id="skills"
+              rows="2"
+            ></textarea>
+          </div>
           <div className="form-group row">
             <label className="col-4" htmlFor="about">
               {" "}
