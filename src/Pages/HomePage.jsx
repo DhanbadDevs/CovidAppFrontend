@@ -48,7 +48,7 @@ const HomePage = () => {
             <div className="container">
             <div className="row">
                 {items.map(item =>
-                    <ItemCard item={item} />
+                    <ItemCard key={item.id} item={item} />
                 )}
             </div>
             </div>

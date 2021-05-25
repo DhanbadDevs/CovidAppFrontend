@@ -65,7 +65,7 @@ const FeedbackForm = () => {
       marginRight: "60%",
     },
     submitButton: {
-      backgroundColor: "#0A8972",
+      backgroundColor: "#0A3441",
       borderRadius: "10px",
     },
     handIcon: {
@@ -76,6 +76,7 @@ const FeedbackForm = () => {
   };
 
   return (
+      <>
     <div className="container">
       <div
         className={
@@ -174,17 +175,18 @@ const FeedbackForm = () => {
             <button
               type="submit"
               className="btn btn-primary"
-              style={style.submitIcon}
+              style={style.submitButton}
             >
               Submit
             </button>
           </div>
         </div>
       </form>
-      <div className="hand text-right mr-0">
+    </div>
+      <div className="hand text-right mb-2">
         <img src={Hand} alt="hand icon" style={style.handIcon} />
       </div>
-    </div>
+      </>
   );
 };
 export default FeedbackForm;
