@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import { NavLink } from 'react-router-dom';
+import {useEffect} from "react";
 import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
 	Redirect,
-	useHistory,
+    useLocation,
 } from 'react-router-dom'
 
 import HomePage from './Pages/HomePage'
@@ -39,6 +38,13 @@ import VolunteerForm from './Forms/VolunteerForm';
 import Header from './Pages/Header';
 import Footer from './Pages/Footer'
 
+const ScrollToTop = () => {
+    const {pathname} = useLocation();
+    useEffect(() => {
+        window.scroll(0,0);
+    }, [pathname]);
+    return null;
+}
 
 function App() {
 
@@ -107,6 +113,7 @@ return (
   
     <Router >
       {/* <Header /> */}
+      <ScrollToTop />
       <div className="d-flex flex-column min-vh-100">
       <Header/>
       <div className="flex-grow-1">
